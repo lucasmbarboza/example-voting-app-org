@@ -13,10 +13,10 @@ pipeline {
             }
         }
         stage('Test') {
-          steps {
-                when{
+          when{
                    changeset "**/result/**"
-                }
+              }
+          steps {
                 dir('result'){
                    sh 'npm install'
                    sh 'npm test'
